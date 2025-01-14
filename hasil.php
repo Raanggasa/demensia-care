@@ -179,7 +179,7 @@
             Informasi ini ditujukan untuk membantu Anda memahami kondisi Anda. Jika Anda memiliki pertanyaan lebih lanjut, harap berkonsultasi dengan tenaga medis profesional.
         </p>
         <div class="text-center mt-4">
-            <a href="index.php" class="btn btn-secondary">Kembali ke Beranda</a>
+            <a href="index.html" class="btn btn-secondary">Kembali ke Beranda</a>
         </div>
     </div>
 
