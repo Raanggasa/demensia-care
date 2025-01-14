@@ -98,7 +98,7 @@
     <div class="form-container">
         <h1><b>Riwayat Penyakit</b></h1>
         <img src="./assets/riwayat-image.svg" alt="Biodata Illustration">
-        <form id="riwayatForm">
+        <form>
             <div class="mb-3">
                 <label class="form-label"><i class="fas fa-heart"></i>Apakah kamu pernah memiliki riwayat gangguan pembuluh darah otak seperti stroke atau masalah aliran darah lain?</label>
                 <div class="form-check">
@@ -154,27 +154,9 @@
                     <label class="form-check-label" for="jantung-no">Tidak Pernah</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100" href=tes_pasien.php>Submit</button>
+            <a class="btn btn-primary w-100" href="tes_pasien.html">Lanjut</a>
         </form>
     </div>
-
-    <script>
-        document.getElementById('riwayatForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah pengiriman form secara default
-
-            // Ambil data riwayat penyakit (opsional, jika ingin menyimpan atau memproses data)
-            const riwayatData = {
-                stroke: document.querySelector('input[name="stroke"]:checked').value,
-                parkinson: document.querySelector('input[name="parkinson"]:checked').value,
-                huntington: document.querySelector('input[name="huntington"]:checked').value,
-                cedera: document.querySelector('input[name="cedera"]:checked').value,
-                jantung: document.querySelector('input[name="jantung"]:checked').value,
-            };
-
-            // Redireksi ke halaman tes_pasien.php setelah klik submit
-            window.location.href = 'tes_pasien.html';
-        });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
