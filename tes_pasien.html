@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Pasien</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+        .navbar-nav {
+            margin: auto;
+        }
+        .btn-primary {
+            margin-left: 10px;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #3b82f6;
+        }
+        .form-container img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 250px;
+            height: auto;
+        }
+        .question {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-check {
+            margin-bottom: 15px;
+        }
+        .img-icon {
+            max-width: 50px;
+            margin-right: 15px;
+        }
+        .img-container {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .img-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+        .icon-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .icon-item {
+            display: flex;
+            align-items: center;
+        }
+        .icon-item i {
+            color: #3b82f6;
+            margin-right: 10px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .form-check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-check-label {
+            margin-left: 10px;
+        }
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .modal-header {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .btn-success {
+            background-color: #3b82f6 !important;
+            border-color: #3b82f6 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/logo.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontak</a>
+                    </li>
+                </ul>
+                <div class="ms-auto">
+                    <a href="#" class="btn btn-outline-primary">Masuk</a>
+                    <a href="#" class="btn btn-primary">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Popup -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Pemberitahuan Penting</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-circle fa-2x" style="color: #f59e0b;"></i>
+                        <span class="ms-3">Kami ingin mengingatkan bahwa data yang Anda berikan bersifat rahasia dan akan dijaga dengan baik. Harap teliti dalam membaca setiap soal, dan jika diperlukan, Anda dapat menggunakan alat bantu baca untuk membantu pemahaman Anda.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Pemberitahuan Penting</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exclamation-circle fa-2x" style="color: #f59e0b;"></i>
+                        <span class="ms-3">Kami ingin mengingatkan bahwa data yang Anda berikan bersifat rahasia dan akan dijaga dengan baik. Harap teliti dalam membaca setiap soal, dan jika diperlukan, Anda dapat menggunakan alat bantu baca untuk membantu pemahaman Anda.</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h1><b>Tes Pasien</b></h1>
+        <form id="tesPasienForm" action="hasil.php" method="POST">
+        <img src="./assets/tes-image.svg" alt="Biodata Illustration">
+
+            <!-- Question 1 -->
+            <div class="card question-card" id="question-1">
+                <div class="card-body">
+                    <div class="question">
+                        <label for="tahun">1. Tahun Berapa Sekarang?</label>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="tahun-2022" name="tahun" value="2022" required>
+                            <label class="form-check-label" for="tahun-2022">2022</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="tahun-1996" name="tahun" value="1996" required>
+                            <label class="form-check-label" for="tahun-1996">1996</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="tahun-2005" name="tahun" value="2005" required>
+                            <label class="form-check-label" for="tahun-2005">2005</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="tahun-2025" name="tahun" value="2025" required>
+                            <label class="form-check-label" for="tahun-2025">2025</label>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                        <button type="button" class="btn btn-primary next-btn" data-next="2">Lanjutkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="card question-card hidden" id="question-2">
+                <div class="card-body">
+                    <div class="question">
+                        <label for="objects">2. Tolong dilihat dan diingat 5 objek dibawah ini:</label>
+                    </div>
+                    <div class="img-container text-center">
+                        <img src="./assets/apel.jpg" alt="Apel">
+                        <img src="./assets/bel.jpg" alt="Bel">
+                        <img src="./assets/dasi.jpg" alt="Dasi">
+                        <img src="./assets/tas.jpg" alt="Tas">
+                        <img src="./assets/jam.jpg" alt="Jam">
+                    </div>
+                    <div class="center-btn">
+                        <button type="button" class="btn btn-primary next-btn" data-next="3">Lanjutkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="card question-card hidden" id="question-3">
+                <div class="card-body">
+                    <div class="question">
+                        <label for="uang">3. Kamu punya Rp. 100.000 dan pergi ke toko untuk membeli pulpen Rp. 3.000 dan buah Rp. 20.000. Berapa pengeluaran?</label>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="pengeluaran" name="pengeluaran" value="23000" required>
+                            <label class="form-check-label" for="pengeluaran">Rp. 23.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="pengeluaran" name="pengeluaran" value="33000" required>
+                            <label class="form-check-label" for="pengeluaran">Rp. 33.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="pengeluaran" name="pengeluaran" value="23000" required>
+                            <label class="form-check-label" for="pengeluaran">Rp. 13.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="pengeluaran" name="pengeluaran" value="33000" required>
+                            <label class="form-check-label" for="pengeluaran">Rp. 73.000</label>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                        <button type="button" class="btn btn-primary next-btn" data-next="4">Lanjutkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="card question-card hidden" id="question-4">
+                <div class="card-body">
+                    <div class="question">
+                        <label for="sisa">Berapa banyak uang yang tersisa?</label>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="sisa" name="sisa" value="77000" required>
+                            <label class="form-check-label" for="sisa">Rp. 123.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="sisa" name="sisa" value="67000" required>
+                            <label class="form-check-label" for="sisa">Rp. 73.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="sisa" name="sisa" value="77000" required>
+                            <label class="form-check-label" for="sisa">Rp. 77.000</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="sisa" name="sisa" value="67000" required>
+                            <label class="form-check-label" for="sisa">Rp. 55.000</label>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                        <button type="submit" class="btn btn-success">Selesai</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- JS and Bootstrap scripts -->
+    <script>
+    // Show the modal when the page loads
+             window.onload = function() {
+        var myModal = new bootstrap.Modal(document.getElementById('infoModal'));
+        myModal.show();
+    };
+    </script>
+    <script>
+        document.querySelectorAll('.next-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const currentQuestion = button.closest('.question-card');
+                const nextQuestionId = button.getAttribute('data-next');
+                currentQuestion.classList.add('hidden');
+                document.getElementById(`question-${nextQuestionId}`).classList.remove('hidden');
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
