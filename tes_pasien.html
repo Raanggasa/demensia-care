@@ -175,32 +175,10 @@
         </div>
     </div>
 
-    <!-- Modal Popup -->
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="infoModalLabel">Pemberitahuan Penting</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-exclamation-circle fa-2x" style="color: #f59e0b;"></i>
-                        <span class="ms-3">Kami ingin mengingatkan bahwa data yang Anda berikan bersifat rahasia dan akan dijaga dengan baik. Harap teliti dalam membaca setiap soal, dan jika diperlukan, Anda dapat menggunakan alat bantu baca untuk membantu pemahaman Anda.</span>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="form-container">
         <h1><b>Tes Pasien</b></h1>
-        <form id="tesPasienForm" action="hasil.html" method="POST">
-        <img src="./assets/tes-image.svg" alt="Biodata Illustration">
-
+        <form>
+            <img src="./assets/tes-image.svg" alt="Biodata Illustration">
             <!-- Question 1 -->
             <div class="card question-card" id="question-1">
                 <div class="card-body">
@@ -305,7 +283,7 @@
                         </div>
                     </div>
                     <div class="center-btn">
-                        <button type="submit" class="btn btn-success">Selesai</button>
+                        <a href="hasil.html" class="btn btn-success">Selesai</a>
                     </div>
                 </div>
             </div>
