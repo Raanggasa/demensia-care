@@ -94,49 +94,72 @@
     <div class="form-container">
         <h1><b>Form Biodata</b></h1>
         <img src="./assets/biodata-image.svg" alt="Biodata Illustration">
-        <form id="biodataForm">
+        <form>
             <div class="mb-3">
                 <label for="nama" class="form-label"><i class="fas fa-user"></i>Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <input type="text" class="form-control" id="nama" name="nama">
             </div>
             <div class="mb-3">
                 <label for="usia" class="form-label"><i class="fas fa-calendar-alt"></i>Usia</label>
-                <input type="number" class="form-control" id="usia" name="usia" required>
+                <input type="number" class="form-control" id="usia" name="usia">
             </div>
             <div class="mb-3">
                 <label for="tanggal-lahir" class="form-label"><i class="fas fa-birthday-cake"></i>Tanggal Lahir</label>
                 <div class="d-flex gap-2">
-                    <select class="form-select" id="tanggal" name="tanggal" required>
+                    <select class="form-select" id="tanggal" name="tanggal">
                         <option value="" selected disabled>Tanggal</option>
-                        <!-- Options for dates -->
-                        <script>
-                            for (let i = 1; i <= 31; i++) {
-                                document.write(`<option value="${i}">${i}</option>`);
-                            }
-                        </script>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
                     </select>
-                    <select class="form-select" id="bulan" name="bulan" required>
+                    <select class="form-select" id="bulan" name="bulan">
                         <option value="" selected disabled>Bulan</option>
-                        <option value="Januari">Januari</option>
-                        <option value="Februari">Februari</option>
-                        <option value="Maret">Maret</option>
-                        <option value="April">April</option>
-                        <option value="Mei">Mei</option>
-                        <option value="Juni">Juni</option>
-                        <option value="Juli">Juli</option>
-                        <option value="Agustus">Agustus</option>
-                        <option value="September">September</option>
-                        <option value="Oktober">Oktober</option>
-                        <option value="November">November</option>
-                        <option value="Desember">Desember</option>
+                        <option>Januari</option>
+                        <option>Februari</option>
+                        <option>Maret</option>
+                        <option>April</option>
+                        <option>Mei</option>
+                        <option>Juni</option>
+                        <option>Juli</option>
+                        <option>Agustus</option>
+                        <option>September</option>
+                        <option>Oktober</option>
+                        <option>November</option>
+                        <option>Desember</option>
                     </select>
-                    <select class="form-select" id="tahun" name="tahun" required>
+                    <select class="form-select" id="tahun" name="tahun">
                         <option value="" selected disabled>Tahun</option>
-                        <!-- Options for years -->
                         <script>
-                            const currentYear = new Date().getFullYear();
-                            for (let i = currentYear; i >= 1900; i--) {
-                                document.write(`<option value="${i}">${i}</option>`);
+                            for (let year = 1950; year <= 2025; year++) {
+                                document.write(`<option>${year}</option>`);
                             }
                         </script>
                     </select>
@@ -146,55 +169,18 @@
                 <label class="form-label"><i class="fas fa-venus-mars"></i>Jenis Kelamin</label>
                 <div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" required>
+                        <input class="form-check-input" type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki">
                         <label class="form-check-label" for="laki-laki">Laki-laki</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+                        <input class="form-check-input" type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
                         <label class="form-check-label" for="perempuan">Perempuan</label>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+            <a href="riwayat_pasien.html" class="btn btn-primary w-100">Submit</a>
         </form>
     </div>
-
-    <script>
-    document.getElementById('biodataForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const formData = {
-            id: Date.now(), // ID unik menggunakan timestamp
-            nama: document.getElementById('nama').value,
-            usia: document.getElementById('usia').value,
-            tanggal: document.getElementById('tanggal').value,
-            bulan: document.getElementById('bulan').value,
-            tahun: document.getElementById('tahun').value,
-            jenis_kelamin: document.querySelector('input[name="jenis_kelamin"]:checked').value
-        };
-
-        fetch('./save_data.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message === "Data berhasil disimpan") {
-                alert(data.message);
-                window.location.href = 'riwayat_pasien.html'; // Ganti dengan halaman tujuan
-            } else {
-                alert('Terjadi kesalahan saat menyimpan data.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Terjadi kesalahan saat menyimpan data.');
-        });
-    });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
