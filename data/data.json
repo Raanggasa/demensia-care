@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1736781656444,
+        "nama": "John Doe",
+        "usia": "21",
+        "tanggal": "14",
+        "bulan": "Juni",
+        "tahun": "2014",
+        "jenis_kelamin": "Laki-laki"
+    },
+    {
+        "id": 1736781819812,
+        "nama": "John Doe",
+        "usia": "21",
+        "tanggal": "14",
+        "bulan": "Juni",
+        "tahun": "2014",
+        "jenis_kelamin": "Laki-laki"
+    },
+    {
+        "id": 1736785066139,
+        "nama": "John Doe",
+        "usia": "45",
+        "tanggal": "11",
+        "bulan": "April",
+        "tahun": "2015",
+        "jenis_kelamin": "Laki-laki"
+    },
+    {
+        "id": 1736817554735,
+        "nama": "John Doe",
+        "usia": "23",
+        "tanggal": "16",
+        "bulan": "September",
+        "tahun": "1998",
+        "jenis_kelamin": "Laki-laki"
+    },
+    {
+        "id": 1736818297770,
+        "nama": "John Doe",
+        "usia": "23",
+        "tanggal": "16",
+        "bulan": "September",
+        "tahun": "1998",
+        "jenis_kelamin": "Laki-laki"
+    }
+]
